@@ -34,6 +34,7 @@ In order to return to a checkpoint, press that number key once.
 ## Important Notes
 1. This is not the final version of this application, so it will feel off and be difficult to manage at times.
 2. Some functionalities *may look present* but are not yet implemented. One such example would be the *Palette* button.
+3. Any user without a numberpad on their keyboard will be advised not to use this program, as some of the controls are numberpad-specific. The program is still accessible to them, but full functionality is not gauranteed.
 ## Used Libraries
 1. p5Js
 2. Electron
