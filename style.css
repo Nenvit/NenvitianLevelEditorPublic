@@ -1,0 +1,158 @@
+:root{
+    --btncolor: white;
+    --btnbc: rgb(0, 6, 94);
+    --btnbwidth: 5px;
+}
+
+body{
+    position:fixed;
+    background-color: #4f3c58;
+    justify-content: center;
+    margin: 0;
+}
+#toolbar{
+    background-color: #202020;
+    height: 60;
+    display:flex;
+    padding:15px;
+    color: black;
+    justify-content: center;
+    border-style: none;
+}
+#toolbar_super{
+    position:absolute;
+    width: 100vw;
+    height: 60px;
+    display:inline;
+}
+#toolbar_super:hover #toolbar{
+    animation:tbFI;
+    animation-duration: 3s;
+}
+#toolbar_super::after #toolbar{
+    animation:tbFo;
+    animation-duration: 2s;
+}
+.dd{
+    margin-left: 20px;
+    margin-right:20px;
+    margin-top: 5px;
+    border-radius: 25px;
+    border-style: bevel;
+    border-color: #F0A0A050;
+    border-width: 5px;
+}
+
+button{
+    font-style: Arial 20px;
+    border-color: var(--btncolor);
+}
+button:hover{
+    background-color:#202020;
+}
+button:active{
+    background-color: #0000;
+}
+
+.lbtn{
+    border-style: solid;
+    border-right-color: var(--btncolor);
+    border-left-color: var(--btnbc);
+    border-top-color: var(--btnbc);
+    border-bottom-color: var(--btnbc);
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-width: var(--btnbwidth);
+    border-top-width: var(--btnbwidth);
+    border-left-width: var(--btnbwidth);
+}
+
+.rbtn{
+    border-style:solid;
+    border-left-color: var(--btncolor);
+    border-right-color: var(--btnbc);
+    border-top-color: var(--btnbc);
+    border-bottom-color: var(--btnbc);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-width: var(--btnbwidth);
+    border-top-width: var(--btnbwidth);
+    border-right-width: var(--btnbwidth);
+}
+.mbtn{
+    border-style: solid;
+    border-top-color: var(--btnbc);
+    border-top-width: var(--btnbwidth);
+    border-bottom-color: var(--btnbc);
+    border-bottom-width: var(--btnbwidth);
+}
+
+.dd .ddctn{
+    display:flex;
+    background-color: inherit;
+    border-style:none;
+    justify-content:none;
+}
+canvas{
+    position: fixed;
+    padding: 0px;
+    top:60px;
+}
+dialog {
+    margin: 0;
+    position: absolute;       /* lock to viewport */
+    top: 80px;              /* center vertically */
+    left: 50vw;             /* center horizontally */
+    transform: translate(-50%);
+    z-index: 9999;         /* ensure it's above everything */
+    border: none;
+    border-radius: 18px;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+dialog#info{
+    background: #707070;
+    position: relative;
+    width: auto;
+    height: auto;
+    max-width: 400px;
+}
+dialog::backdrop {
+    background: rgba(0,0,0,0.7); /* dim background */
+}
+dialog#info::backdrop {
+    background: rgba(0, 0, 0, 0); /* No background */
+}
+dialog#info #info-msg{
+    padding: 5px;
+    border-style: none;
+    border-radius: inherit;
+    position: relative;
+    display: block;
+    width: auto;
+    z-index: 9;
+    height: auto;
+    background: radial-gradient(ellipse, #3e3e3e, #4e4e4e)
+}
+dialog#info .prgb{
+    position: absolute;
+    z-index: 0;
+    inset: 0;
+}
+.prgb {
+  width: 100%;
+  height: 100%;
+  background: #3e3e3e;
+  border-radius: inherit;
+}
+
+.prg {
+  margin-left: -1px;
+  height: 100%;
+  width: 0%;
+  z-index: 1;
+  background: linear-gradient(40deg, #000000, #252525, #4040406e, #0000ff, #01015c);
+  transition: width 0.1s linear;
+  border-radius: inherit;
+}

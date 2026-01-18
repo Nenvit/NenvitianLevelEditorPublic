@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Nevitian Level Editor</title>
+        <link rel="icon" type="image/x-icon" href="default_palette/nenvitian.ico">
+        <link rel='stylesheet' href='style.css'/>
+        <meta http-equiv="Content-Security-Policy" content="script-src 'self'; object-src 'none'">
+        <meta charset="UTF8"/>
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>-->
+        <script src="./node_modules/p5/lib/p5.js" ></script>
+        <script src="./func/utils.js" defer></script>
+        <script src="./func/dom.js" defer></script>
+        <script src="./func/editor.js" defer></script>
+        <script src="./canv-processing/process.js" defer></script>
+    </head>
+    <body>
+        <main>
+        <div id="toolbar_super">
+            <span id="tools"></span>
+            <div id="toolbar">
+                <div class="dd"> <!-- File Management -->
+                    <nav id="ddctn"><form>
+                    <button id='open' class='lbtn' type="button">  Open </button>
+                    <button id='download' class="mbtn" type="button"> Save World </button>
+                    <button id="convert" class="mbtn" type="button"> Generate </button>
+                    <button id="rename" class="rbtn" type="button"> Rename  </button> <!-- .JSON .TXT .TPAL -->
+                    </form></nav>
+                </div>
+                <div class="dd"> <!-- Tools -->
+                    <div id="ddctn">
+                    <button id="opt_chunk" class="lbtn" > Chunk... </button>
+                    <button id="opt_levl" class="mbtn" > Edit Mode... </button>
+                    <button id="opt_pref" class="mbtn" > Save Preferences... </button>
+                    <button id="opt_palette" class="rbtn"> Tile Palette... </button>
+                    </div>
+                </div>
+                <div class="dd"> <!-- View -->
+                    <div id="ddctn">
+                    <button id="gen_canvas" class="lbtn"> Regenerate... </button>
+                    <button id="opt_grid" class="mbtn" > Grid... </button>
+                    <button id="opt_camera" class="mbtn" > Camera... </button>
+                    <button id="opt_shaders" class="mbtn" > Mouse... </button> <!-- This option does not edit the level file. -->
+                    <button id="opt_quit" class="rbtn"> Quit...   </button>
+                    </div>
+                </div>
+        </div>
+        </div>
+        <dialog id="Title">
+                <label for="cre"></label>
+                <input id="cre" type="text" name="Title">
+                <div>
+                    <button value="cancel" id="can" type="button">Cancel</button>
+                    <button id="ok" value="ok" type="button">Ok</button>
+                </div>
+        </dialog>
+        <dialog id="exit-confirmation">
+            <p id="message"> Do you want to save the Map? </p>
+            <div>
+                <button id="digress" type="button"> No </button>
+                <button id="proceed" type="button"> Yes </button>
+            </div>
+        </dialog>
+        <dialog id="warning">
+            <p id="warning-msg"></p>
+            <button id="confirm"> OK </button>
+        </dialog>
+        <dialog id="info">
+            <div id="time" class="prgb">
+                <div class="prg"></div>
+            </div>
+            <div id="info-msg"></div>
+        </dialog>
+        <dialog id="opt-chunk">
+            <h2>Chunk Options</h2>
+            <form method="dialog" id="chk-fm">
+                <fieldset>
+                    <legend>Chunk Actions</legend>
+                    <input type="checkbox" id="noisify"><label for="noisify">  Apply Noise?</label>
+                    <input type="checkbox" id="veg"><label for="veg">  Vegetate?</label>
+                    <input type="checkbox" id="smart"><label for="smart">  Smart Tiles?</label>
+                </fieldset>
+                <fieldset hidden disabled>
+                    <legend> Chunk Settings </legend>
+
+                </fieldset>
+                <fieldset>
+                    <legend> Commit </legend>
+                    <input type="reset" id="rst">
+                    <button type="button" id="ign">Ignore Changes</button>
+                    <input type="submit" id="sub">
+                </fieldset>
+            </form>
+        </dialog>
+        <canvas id="defaultCanvas0" width="1328" height="576"></canvas>
+        <canvas id="overlay"></canvas>
+        </main>
+    </body>
+</html>

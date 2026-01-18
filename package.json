@@ -1,0 +1,29 @@
+{
+  "name": "nenvitian-le",
+  "productName": "NenLevEdi",
+  "version": "1.0.4",
+  "description": "This is the game level editor for Nenvit Code's games.",
+  "license": "ISC",
+  "author": "Nenvit Codes",
+  "type": "commonjs",
+  "main": "app/index.js",
+  "config": {},
+  "scripts": {
+    "test": "electron .",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "dependencies": {
+    "electron": "39.2.4",
+    "electron-is-dev": "3.0.1",
+    "p5": "2.1.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "7.10.2",
+    "@electron-forge/maker-squirrel": "7.10.2",
+    "@electron-forge/maker-zip": "7.10.2",
+    "electron": "39.2.4",
+    "p5": "2.1.1"
+  }
+}
