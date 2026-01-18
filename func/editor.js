@@ -496,6 +496,12 @@ function EIkey(event){
                 if((constructed === "deaf")) loudEI();
                 else if((constructed === 'loud')) deafEI();
                 break;
+            case "Numpad0":
+                noisy = False
+                smartEdges = False
+                constructed = 'loud'
+                Notify(`Reverted Mode`)
+                loudEI()
             case "NumpadAdd": //+
                 addLayer();
                 break;
