@@ -41,7 +41,6 @@ In order to return to a checkpoint, press that number key once.
 3. miscellaneous (*There may be other libraries present, but the main ones were p5.js and Electron*)
 ## Running the Level Editor
 There are three available packages: `*.nutpkg`, `*.exe`, and `*win32-x64.zip`.
-This repo will have the latest versions of these packages, it is recommended to use them instead of cloning this repo.
 If one does wish to clone the repo, follow the commands:
 ```bash
 npm install
