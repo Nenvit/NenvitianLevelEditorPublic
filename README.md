@@ -1,5 +1,6 @@
 # Nenvitian Level Editor
 A simple grid manipulation program based in electron.
+### Apologies the disproportionate toolbar, I am to resolve that in sometime in the future.
 ## Features
 - Tile randomizer.
 - Auto-tile system.
